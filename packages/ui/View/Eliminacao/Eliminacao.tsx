@@ -24,7 +24,7 @@ export function Eliminacao(){
             </div>
         </div>
 
-        <button type="submit" className="btn btn-primary">inserir</button>
+        <button type="submit" className="btn btn-primary">inseriraaaaaaaaaaaaaaaaaaaaaaa</button>
     </form> 
     )
 }
