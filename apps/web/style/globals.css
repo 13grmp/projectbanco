@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background-color: white;
+}
+
+
+
+[data-topbar=dark] #page-topbar {
+    background-color: orangered !important;
+    border-color: orangered !important;
+}
+
+@media (min-width: 768px) {
+    .topbar-user {
+        background-color: white;
+    }
+
+}
+
+@media (min-width: 1024.1px) {
+    [data-layout=horizontal] .teste {
+        margin-top: 60px !important;
+    }
+}
+[data-layout=horizontal] .teste {
+    padding-top: 66.4px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.width-pequeno {
+    width: 100px;
+}
+
+.width-grande {
+    width: 400px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-90 {
+    width: 90%;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.width-70 {
+    width: 70%;
+}
+
+.width-65 {
+    width: 65%;
+}
+
+.width-68 {
+    width: 68%;
+}
+
+.width-60 {
+    width: 60%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-45 {
+    width: 45%;
+}
+
+.width-48 {
+    width: 48%;
+}
+
+.width-43 {
+    width: 43%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.width-38 {
+    width: 38%;
+}
+
+.width-35 {
+    width: 35%;
+}
+
+.width-28 {
+    width: 28%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+@media (max-width: 600px) {
+    .width-80 {
+        width: 100% !important;
+    }
+
+    .width-75 {
+        width: 100% !important;
+    }
+
+    .width-70 {
+        width: 100% !important;
+    }
+
+    .width-68 {
+        width: 100% !important;
+    }
+
+    .width-65 {
+        width: 100% !important;
+    }
+
+    .width-60 {
+        width: 100% !important;
+    }
+
+    .width-50 {
+        width: 100% !important;
+    }
+
+    .width-45 {
+        width: 100% !important;
+    }
+
+    .width-48 {
+        width: 100% !important;
+    }
+
+    .width-40 {
+        width: 100% !important;
+    }
+
+    .width-43 {
+        width: 100% !important;
+    }
+
+    .width-38 {
+        width: 100% !important;
+    }
+
+    .width-35 {
+        width: 100% !important;
+    }
+
+    .width-28 {
+        width: 100% !important;
+    }
+
+    .width-25 {
+        width: 100% !important;
+    }
+
+    .width-20 {
+        width: 100% !important;
+    }
+
+    .width-10 {
+        width: 100% !important;
+    }
+
+    .width-medio {
+        width: 100% !important;
+    }
+
+    .width-pequeno {
+        width: 100% !important;
+    }
+
+    .width-grande {
+        width: 100% !important;
+    }
+
+    .tamanhofull {
+        width: 100% !important;
+    }
+}
