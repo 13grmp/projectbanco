@@ -1,30 +1,116 @@
+import { ChangeEvent, useEffect, useState } from "react";
+import { InputRadio } from "../../Src/Components/InputRadio";
+import { InputTexto } from "../../Src/Components/InputTexto";
+import { ApiController } from "../../Src/commons/ApiControler";
 
 
-export function Eliminacao(){
-    return(
-        <form >
-        <div className="mb-4">
-            <h3>Eliminação</h3>
-            <p>Cadastre o eliminado.</p>
-        </div>
-        <div className="row">
-            <div className="mb-3 col-6">
-                <label htmlFor="exampleInputEmail1" className="form-label">Nome:</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-            </div>
-            <div className="mb-3 col-6">
-                <label htmlFor="exampleInputEmail1" className="form-label">Motivo:</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-            </div>
-        </div>
-        <div className="row">
-            <div className="mb-3 col-6">
-                <label htmlFor="exampleInputEmail1" className="form-label">Data:</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-            </div>
-        </div>
+export function Eliminacao() {
+    const [controlCrud, setControlCrud] = useState('1')
+    const [idAtualizarDeletar, setIdAtualizarDeletar] = useState("")
+    const [labelAtualizarDeletar, setLabelAtualizarDeletar] = useState("")
+    const [ocultaLabel, setOcultaLabel] = useState("")
+    const [textoPage,setTextoPage] = useState("")
 
-        <button type="submit" className="btn btn-primary">inserir</button>
-    </form> 
+    const [nome, setNome] = useState("")
+    const [motivo, setMotivo] = useState("")
+    const [dataEliminacao, setData] = useState("")
+
+    function SalvarTipoCrud(event: ChangeEvent<HTMLInputElement>) {
+        setControlCrud(event.target.value);
+    }
+    function limparCampos() {
+        setNome('')
+        setMotivo('')
+        setData('')
+    }
+    useEffect(() => {
+        if (controlCrud == "2") {
+            setLabelAtualizarDeletar("Id da eliminação para atualizar")
+            setOcultaLabel("")
+            setTextoPage("Atualizar")
+
+
+        } else if (controlCrud == "3") {
+            setOcultaLabel("")
+            setTextoPage("Deletar")
+            setLabelAtualizarDeletar("Id da eliminação para deletar")
+        } else {
+            setOcultaLabel("d-none")
+            setTextoPage("Cadastrar")
+            setIdAtualizarDeletar('')
+        }
+
+    }, [controlCrud])
+
+    const operacaoCRUD = () => {
+        const data = {
+            "nome": nome,
+            "motivo": motivo,
+            "data": dataEliminacao,
+        }
+        console.log(data)
+
+        switch (controlCrud) {
+            case "1":
+                //  ApiController.post("/eliminacao", data).then((response) => {
+                //     limparCampos()
+                // }
+                // ).catch((error) => {
+                //    console.log(error)
+                // });
+
+                break;
+            case "2":
+                //  ApiController.put(`/eliminacao/${idAtualizarDeletar}`, data).then((response) => {
+                //     limparCampos()
+                // }
+                // ).catch((error) => {
+                //    console.log(error)
+                // });
+                break;
+            case "3":
+                // ApiController.delete(`/eliminacao/${idAtualizarDeletar}`).then((response) => {
+                //     limparCampos()
+                // }
+                // ).catch((error) => {
+                //    console.log(error)
+                // });
+                break;
+
+        }
+
+    }
+
+    return (
+        <form onSubmit={operacaoCRUD} >
+            <div className="mb-4">
+                <h3>Eliminação</h3>
+                <p>{textoPage} o eliminado.</p>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <InputRadio nomeDoRadio='Tipo de Operação Crud:' valorSelecionado={controlCrud} atualizacaoDeEstado={SalvarTipoCrud} opcoes={[{ valor: "1", label: "Inserir" }, { valor: "2", label: "Atualizar" }, { valor: "3", label: "Deletar" }]} tipo='inline' />
+                </div>
+                <div className="mb-3 col-6">
+                    <div className={`col-12 ${ocultaLabel}`}>
+                        <InputTexto nomeDoInput={labelAtualizarDeletar} value={idAtualizarDeletar} atualizacaoDeEstado={(e) => { setIdAtualizarDeletar(e.target.value) }} />
+                    </div>
+
+                    <InputTexto nomeDoInput={"Nome:"} value={nome} atualizacaoDeEstado={(e) => { setNome(e.target.value) }} />
+                </div>
+                <div className="mb-3 col-6">
+                    <InputTexto nomeDoInput={"Motivo:"} value={motivo} atualizacaoDeEstado={(e) => { setMotivo(e.target.value) }} />
+
+                </div>
+            </div>
+            <div className="row">
+                <div className="mb-3 col-6">
+                    <InputTexto nomeDoInput={"Data:"} value={dataEliminacao} atualizacaoDeEstado={(e) => { setData(e.target.value) }} />
+
+                </div>
+            </div>
+
+            <button type="submit" className="btn btn-primary">inserir</button>
+        </form>
     )
 }
