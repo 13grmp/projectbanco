@@ -45,6 +45,13 @@ Este repositório contém scripts SQL para a criação de tabelas e inserção d
 13. **Tabela realiza**
     - Gerencia a participação dos participantes em desafios ou testes específicos.
 
+### Scripts
+
+[Script para criar as tabelas](https://github.com/13grmp/projectbanco/blob/main/springboot/criacaoScript.md)
+
+[Exemplo de insert into](https://github.com/13grmp/projectbanco/blob/main/springboot/exemploInsert.md)
+
+
 ### Inserindo Dados Iniciais
 
 Para popular as tabelas com dados iniciais, execute os scripts SQL de inserção fornecidos. Esses scripts incluem dados de exemplo para cada tabela, abrangendo eliminações, eventos especiais, participantes, vencedores, sessões de votação, edições, ocorrências, vínculos entre entidades, desafios e envolvimento de participantes.
