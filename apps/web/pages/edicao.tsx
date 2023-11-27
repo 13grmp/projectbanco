@@ -1,7 +1,7 @@
-import { PageView } from "ui";
+import { EdicaoView, PageView } from "ui";
 
 export default function edicao() {
   return (
-    <p>principal</p>
+    <EdicaoView/>
   );
 }
