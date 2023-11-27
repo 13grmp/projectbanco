@@ -71,10 +71,6 @@ export function Header({ children }: HeaderProps) {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link menu-link" href="/casa" role="button" aria-expanded="false" aria-controls="sidebarCharts">Casa
-                                </a>
-                            </li>
-                            <li className="nav-item">
                                 <a className="nav-link menu-link" href="/edicao" role="button" aria-expanded="false" aria-controls="sidebarCharts">Edição
                                 </a>
                             </li>
