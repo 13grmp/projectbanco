@@ -1,7 +1,7 @@
-import { PageView } from "ui";
+import { PageView, ProvaEspecial } from "ui";
 
 export default function eventoespecial() {
   return (
-    <p>principal</p>
+    <ProvaEspecial/>
   );
 }
